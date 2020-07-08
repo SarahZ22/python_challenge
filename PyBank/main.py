@@ -1,3 +1,5 @@
+#code created with help of teacher, study group, office hours and tutor
+#dependencies
 import os
 import csv
 
@@ -63,8 +65,9 @@ with open(budget_data, 'r') as csvfile:
     print(f'Greatest Decrease in Profits:', (dec_month + " " + "(" + greatest_dec + ")"))
     
 #combine print statements to print in txt file
+#teacher said to do it in one line like this....
 output = ('Financial Analysis' + '\n' +'-'*30 + '\n' + 'Total Months: ' + str(allmonths) + '\n' + 'Total: ' + totalPL + '\n' 'Average Change: ' + average_chg + '\n' + 'Greatest Increase in Profits:' + (inc_month + " " + "(" + greatest_inc + ")") + '\n' + 'Greatest Decrease in Profits:' + (dec_month + " " + "(" + greatest_dec + ")"))
 
-#create, open and write txt file
+#write to txt file
 with open('Analysis/Financial_analysis.txt', 'w') as tf:
     tf.write(output)
