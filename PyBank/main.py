@@ -62,19 +62,9 @@ with open(budget_data, 'r') as csvfile:
     print(f'Greatest Increase in Profits:', (inc_month + " " + "(" + greatest_inc + ")"))
     print(f'Greatest Decrease in Profits:', (dec_month + " " + "(" + greatest_dec + ")"))
     
-    #write to txt file
-    #set location for output
-    outputplace = os.path.join('Analysis', 'Financial_Analysis.txt')
+#combine print statements to print in txt file
+output = ('Financial Analysis' + '\n' +'-'*30 + '\n' + 'Total Months: ' + str(allmonths) + '\n' + 'Total: ' + totalPL + '\n' 'Average Change: ' + average_chg + '\n' + 'Greatest Increase in Profits:' + (inc_month + " " + "(" + greatest_inc + ")") + '\n' + 'Greatest Decrease in Profits:' + (dec_month + " " + "(" + greatest_dec + ")"))
 
-    # #open file to write
-    with open(outputplace, 'w', newline ='') as datafile:
-        txtwriter = csv.writer(datafile, delimiter= ' ')
-
-    #write to the file
-        txtwriter.writerow(['Financial Analysis'])
-        txtwriter.writerow(["-"*30])
-        txtwriter.writerow(['Total Months:', allmonths])
-        txtwriter.writerow(['Total:', totalPL])
-        txtwriter.writerow(['Average Change:', average_chg])
-        txtwriter.writerow(['Greatest Increase in Profits:', (inc_month + " " + "(" + greatest_inc + ")")])
-        txtwriter.writerow(['Greatest Decrease in Profits:', (dec_month + " " + "(" + greatest_dec + ")")])
+#create, open and write txt file
+with open('Analysis/Financial_analysis.txt', 'w') as tf:
+    tf.write(output)
